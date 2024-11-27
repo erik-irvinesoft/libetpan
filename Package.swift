@@ -142,7 +142,8 @@ var package = Package(
                 .headerSearchPath("src/driver/tools"),
                 .define("HAVE_CFNETWORK", to: "1", .when(platforms: [.iOS, .macOS, .macCatalyst])),
                 .define("LIBETPAN_IOS_DISABLE_SSL", to: "1", .when(platforms: [.iOS, .macOS, .macCatalyst])),
-                .define("HAVE_CONFIG_H", to: "1")
+                .define("HAVE_CONFIG_H", to: "1"),
+                .define("NO_MACROS", to: "1")
             ],
             linkerSettings: [
                 // We use system (aka toolchain) OpenSSL on Android, that's why we add linking here
